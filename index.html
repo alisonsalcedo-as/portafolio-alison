@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alison Daniela Salcedo Parra | Diseño de modas</title>
+<meta name="description" content="Portafolio personal de Alison Daniela Salcedo Parra, estudiante de diseño de modas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff8fa; --surface:#ffffff; --blush:#fde4ec; --rose:#f4b6c8; --deep:#b84d72;
+  --ink:#4b2a38; --muted:#8a6573; --line:#f3d3de; --shadow:rgba(184,77,114,.14);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Segoe UI",Helvetica,Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#1f1419; --surface:#2b1c24; --blush:#3a2430; --rose:#e9a1b9; --deep:#f2a9c2;
+  --ink:#f8e6ed; --muted:#c9a5b4; --line:#4a303c; --shadow:rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--bg);color:var(--ink);line-height:1.7;font-size:1.05rem;transition:background .4s,color .4s}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:6px}
+
+/* Encabezado */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;gap:1rem}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.6rem;font-weight:600;text-decoration:none;color:var(--deep)}
+nav{display:flex;gap:.4rem;align-items:center}
+nav a.link{text-decoration:none;padding:.45rem 1rem;border-radius:999px;font-weight:400;transition:background .25s}
+nav a.link:hover{background:var(--blush)}
+nav a.link.on{background:var(--rose);color:#4b2a38}
+#tema,#menu{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:transform .3s}
+#tema:hover{transform:rotate(20deg)}
+#menu{display:none}
+
+main{max-width:1100px;margin:auto;padding:0 1.4rem}
+.page{display:none;padding:3.5rem 0 4rem}
+.page.show{display:block}
+
+/* Inicio */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);font-style:italic;color:var(--deep);margin-bottom:1rem}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:30em;margin-bottom:1.8rem}
+.btn{display:inline-block;text-decoration:none;padding:.8rem 1.7rem;border-radius:999px;background:var(--deep);color:#fff;font-weight:400;margin:0 .6rem .6rem 0;transition:transform .25s,box-shadow .25s}
+:root[data-theme="dark"] .btn{color:#2b1c24}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px var(--shadow)}
+.btn.alt{background:transparent;color:var(--deep);border:1px solid var(--deep)}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 28px 28px;background:linear-gradient(170deg,var(--blush),var(--rose));display:grid;place-items:center;position:relative;box-shadow:0 24px 50px var(--shadow);animation:rise 1s ease both}
+.arch::after{content:"";position:absolute;inset:14px;border:1.5px dashed var(--surface);border-radius:999px 999px 18px 18px;opacity:.85}
+.arch svg{width:58%;color:var(--surface);filter:drop-shadow(0 6px 10px var(--shadow))}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+.about{margin-top:5rem;display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:start}
+.about h2,.head h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--deep)}
+.about p{margin-bottom:1rem;color:var(--muted)}
+.about p strong{color:var(--ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.chips span{background:var(--blush);padding:.3rem .95rem;border-radius:999px;font-size:.92rem}
+.summary{margin-top:4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.summary a{text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.5rem;transition:transform .25s,box-shadow .25s}
+.summary a:hover{transform:translateY(-4px);box-shadow:0 14px 28px var(--shadow)}
+.summary h3{font-size:1.5rem;color:var(--deep);margin-bottom:.4rem}
+.summary p{font-size:.95rem;color:var(--muted)}
+
+/* Encabezados de subpágina */
+.head{max-width:40rem;margin-bottom:2.5rem}
+.head p{color:var(--muted);margin-top:.8rem}
+
+/* Galería */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 30px var(--shadow)}
+.pic{aspect-ratio:3/4;background:var(--blush);overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic svg{width:46%;filter:drop-shadow(0 6px 8px var(--shadow))}
+.g1{background:linear-gradient(160deg,#fbd3e0,#f4a9c1)}
+.g2{background:linear-gradient(160deg,#fff0f5,#f8c7d6)}
+.g3{background:linear-gradient(160deg,#f7c1d3,#e48fb0)}
+.g4{background:linear-gradient(160deg,#fde4ec,#efb5c9)}
+.g5{background:linear-gradient(160deg,#f9cbd9,#d77fa2)}
+.g6{background:linear-gradient(160deg,#ffe9f0,#f6bdd0)}
+:root[data-theme="dark"] .pic{filter:brightness(.82) saturate(.9)}
+.card figcaption{padding:1.1rem 1.3rem 1.4rem}
+.card h3{font-size:1.4rem;color:var(--deep);margin-bottom:.3rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card small{display:block;margin-top:.6rem;font-size:.82rem;color:var(--ink);opacity:.7}
+
+/* Servicios */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:1.8rem;display:flex;flex-direction:column;gap:.6rem;transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 16px 30px var(--shadow)}
+.svc h3{font-size:1.7rem;color:var(--deep)}
+.svc p{color:var(--muted);font-size:.97rem}
+.svc ul{list-style:none;font-size:.93rem}
+.svc li{padding-left:1.4rem;position:relative;margin:.15rem 0}
+.svc li::before{content:"\2740";position:absolute;left:0;color:var(--rose)}
+.price{margin-top:auto;padding-top:.8rem;border-top:1px dashed var(--line);font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--ink)}
+.note{margin-top:2rem;background:var(--blush);padding:1.2rem 1.5rem;border-radius:20px;font-size:.95rem}
+
+footer{border-top:1px solid var(--line);background:var(--surface);text-align:center;padding:2.2rem 1.4rem;color:var(--muted);font-size:.93rem}
+footer .logo{display:block;margin-bottom:.4rem;font-size:1.5rem}
+footer a{color:var(--deep)}
+
+@media (max-width:860px){
+  .hero,.about{grid-template-columns:1fr}
+  .arch{max-width:340px;margin:auto}
+  .grid,.summary{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  #menu{display:block}
+  nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:.8rem 1.4rem 1.2rem;border-bottom:1px solid var(--line);display:none}
+  nav.open{display:flex}
+  nav a.link{text-align:center}
+  .grid,.summary,.services{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- Silueta reutilizable (vestido) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vestido" viewBox="0 0 100 140">
+    <path fill="currentColor" d="M38 6l12 16 12-16 5 26-9 22 26 78q-33 10-66 0l26-78-9-22z"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#inicio">Alison Salcedo</a>
+    <nav id="nav" aria-label="Menú principal">
+      <a class="link" href="#inicio" data-p="inicio">Inicio y sobre mí</a>
+      <a class="link" href="#galeria" data-p="galeria">Galería</a>
+      <a class="link" href="#servicios" data-p="servicios">Servicios</a>
+    </nav>
+    <div style="display:flex;gap:.5rem">
+      <button id="tema" aria-label="Cambiar entre modo claro y modo noche" title="Modo claro / noche">&#9790;</button>
+      <button id="menu" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- SUBPÁGINA 1: INICIO + SOBRE MÍ -->
+<section class="page" id="inicio">
+  <div class="hero">
+    <div>
+      <h1>Alison Daniela Salcedo Parra</h1>
+      <p class="lead">Estudio diseño de modas y creo prendas que combinan líneas suaves, texturas delicadas y mucha personalidad. Este sitio reúne mi trabajo, mis ideas y los servicios que ofrezco.</p>
+      <a class="btn" href="#galeria">Ver mi galería</a>
+      <a class="btn alt" href="#servicios">Conocer servicios</a>
+    </div>
+    <div class="arch" role="img" aria-label="Silueta de un vestido sobre un fondo rosado pastel"><svg><use href="#vestido"/></svg></div>
+  </div>
+
+  <div class="about">
+    <h2>Sobre mí</h2>
+    <div>
+      <p>Hola, soy <strong>Alison Daniela Salcedo Parra</strong>. Desde niña dibujaba vestidos en los márgenes de mis cuadernos, y hoy convierto esos bocetos en prendas reales: primero el croquis, luego el patrón y por último la confección.</p>
+      <p>Mis bocetos actuales se inspiran en la naturaleza: hojas, enredaderas y verdes frescos combinados con rosas y amarillos suaves. También me atraen la moda femenina contemporánea y los acabados hechos a mano. Creo que la ropa debe ser cómoda, favorecer a quien la usa y contar una historia.</p>
+      <p>Este sitio es mi portafolio digital: una vitrina para mostrar mi proceso creativo y conectar con futuras clientas, colegas y marcas.</p>
+      <div class="chips"><span>Ilustración de moda</span><span>Patronaje</span><span>Confección</span><span>Moda sostenible</span><span>Asesoría de imagen</span></div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <a href="#galeria"><h3>Galería</h3><p>Seis figurines ilustrados con su descripción: vestidos, conjuntos y accesorios.</p></a>
+    <a href="#servicios"><h3>Servicios</h3><p>Diseño a medida, arreglos, ilustración de moda y asesoría de estilo.</p></a>
+    <a href="#inicio" id="ir-contacto"><h3>Contacto</h3><p>Escríbeme para cotizar o resolver dudas. Los datos están al final de la página.</p></a>
+  </div>
+</section>
+
+<!-- SUBPÁGINA 2: GALERÍA -->
+<section class="page" id="galeria">
+  <div class="head">
+    <h2>Galería de proyectos</h2>
+    <p>Una selección de mis figurines de moda, vistos de frente y de espalda. Cada imagen incluye su descripción: diseño, paleta y técnica.</p>
+  </div>
+  <div class="grid">
+    <figure class="card"><div class="pic"><img src="img/boceto1.jpg" alt="Figurín de moda frontal y posterior: Vestido camisero menta" loading="lazy"></div>
+      <figcaption><h3>Vestido camisero menta</h3><p>Figurín frontal y posterior de un vestido largo estilo camisero en verde menta: cuello alto, botones al frente, bolsillos con solapa, cinturón y abertura central en la falda. Las mangas globo llevan un estampado de hojas y la espalda es abierta en V. Se acompaña con un bolso rosado de cuentas.</p><small>Paleta: verde menta y rosa. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/boceto2.jpg" alt="Figurín de moda frontal y posterior: Look 11: enredadera" loading="lazy"></div>
+      <figcaption><h3>Look 11: enredadera</h3><p>Conjunto de corsé sin tirantes con cuello de hojas y falda corta cruzada con hebilla, de la que cae una cascada de hojas de enredadera sobre las piernas. Incluye clutch amarillo y botas en tonos rosados.</p><small>Paleta: verde, rosa y amarillo. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/boceto3.jpg" alt="Figurín de moda frontal y posterior: Pétalo rosa" loading="lazy"></div>
+      <figcaption><h3>Pétalo rosa</h3><p>Vestido corto sin mangas en rosa con falda cruzada en forma de pétalo de tulipán y un lazo en la cintura. La espalda lleva faja ancha. Se completa con botas altas del mismo tono y aretes verdes.</p><small>Paleta: rosa y verde esmeralda. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/boceto4.jpg" alt="Figurín de moda frontal y posterior: Arnés de hiedra" loading="lazy"></div>
+      <figcaption><h3>Arnés de hiedra</h3><p>Vestido blanco corto de línea A con un corpiño de tiras en verde azulado que forma un arnés, cinturón con pequeño bolso y un bolso del que cuelgan hojas de hiedra. Las botines llevan borde de pelo suave.</p><small>Paleta: blanco, verde azulado y amarillo suave. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/boceto5.jpg" alt="Figurín de moda frontal y posterior: Hoja y miel" loading="lazy"></div>
+      <figcaption><h3>Hoja y miel</h3><p>Conjunto de top halter verde con borde ondulado y detalles de hojas, y falda corta amarillo miel con una línea diagonal de puntos. Botas verdes hasta la rodilla y un accesorio de hojas en el cabello.</p><small>Paleta: verde menta y amarillo miel. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/boceto6.jpg" alt="Figurín de moda frontal y posterior: Chaleco jardín" loading="lazy"></div>
+      <figcaption><h3>Chaleco jardín</h3><p>Chaleco verde de cuello alto con aberturas en los hombros y falda larga y fluida en tono crema con pretina amarilla. Los guantes con volantes y los aretes de plumas aportan el toque final.</p><small>Paleta: verde, crema y amarillo. Técnica: ilustración de moda a mano.</small></figcaption></figure>
+  </div>
+</section>
+
+<!-- SUBPÁGINA 3: SERVICIOS -->
+<section class="page" id="servicios">
+  <div class="head">
+    <h2>Servicios</h2>
+    <p>Cada pieza se trabaja contigo: escuchamos tu idea, tomamos medidas y avanzamos por etapas hasta tener la prenda lista.</p>
+  </div>
+  <div class="services">
+    <article class="svc"><h3>Diseño a medida</h3><p>Vestidos y conjuntos únicos para graduaciones, bodas, quinceañeras y eventos especiales.</p>
+      <ul><li>Boceto y selección de telas</li><li>Toma de medidas y prueba</li><li>Confección y ajustes finales</li></ul><div class="price">Desde $350.000 COP</div></article>
+    <article class="svc"><h3>Arreglos y transformación</h3><p>Dale una nueva vida a tu ropa: ajustes, cambios de largo, rediseño de prendas y reciclaje creativo.</p>
+      <ul><li>Entalle y ajuste de tallas</li><li>Rediseño de prendas usadas</li><li>Entrega en pocos días</li></ul><div class="price">Desde $25.000 COP</div></article>
+    <article class="svc"><h3>Ilustración de moda</h3><p>Figurines y bocetos digitales o a mano para marcas, emprendimientos y proyectos académicos.</p>
+      <ul><li>Figurín con ficha técnica</li><li>Paleta de color y tejidos</li><li>Archivos listos para presentar</li></ul><div class="price">Desde $60.000 COP</div></article>
+    <article class="svc"><h3>Asesoría de estilo</h3><p>Sesión personalizada para armar un guardarropa cómodo y coherente con tu personalidad y tu presupuesto.</p>
+      <ul><li>Análisis de colores y siluetas</li><li>Combinaciones con tu ropa actual</li><li>Guía de compras conscientes</li></ul><div class="price">Desde $80.000 COP</div></article>
+  </div>
+  <p class="note">Los precios son de referencia y pueden variar según la complejidad del diseño y los materiales. Escríbeme para recibir una cotización sin compromiso.</p>
+</section>
+
+</main>
+
+<footer id="contacto">
+  <a class="logo" href="#inicio">Alison Daniela Salcedo Parra</a>
+  Diseño de modas &middot; Medellín, Colombia<br>
+  <a href="mailto:alisonsalcedoparra@gmail.com">alisonsalcedoparra@gmail.com</a> &middot; <a href="https://www.instagram.com/alidanielasalcedoparra/" target="_blank" rel="noopener">Instagram: @alidanielasalcedoparra</a><br>
+  <small>&copy; 2026 Alison Daniela Salcedo Parra. Todos los derechos reservados.</small>
+</footer>
+
+<script>
+(function(){
+  var pages=["inicio","galeria","servicios"];
+  var root=document.documentElement, nav=document.getElementById("nav"), menu=document.getElementById("menu"), tema=document.getElementById("tema");
+
+  function mostrar(){
+    var id=location.hash.replace("#","");
+    if(id==="contacto"){document.getElementById("contacto").scrollIntoView();return;}
+    if(pages.indexOf(id)<0) id="inicio";
+    pages.forEach(function(p){document.getElementById(p).classList.toggle("show",p===id);});
+    document.querySelectorAll("nav a.link").forEach(function(a){a.classList.toggle("on",a.dataset.p===id);});
+    nav.classList.remove("open"); menu.setAttribute("aria-expanded","false");
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",mostrar); mostrar();
+
+  document.getElementById("ir-contacto").addEventListener("click",function(e){
+    e.preventDefault(); document.getElementById("contacto").scrollIntoView({behavior:"smooth"});
+  });
+  menu.addEventListener("click",function(){
+    var o=nav.classList.toggle("open"); menu.setAttribute("aria-expanded",o);
+  });
+
+  /* Modo noche: recuerda la elección y respeta la preferencia del sistema */
+  var guardado=null;
+  try{guardado=localStorage.getItem("tema");}catch(e){}
+  var oscuro=guardado?guardado==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
+  function aplicar(){root.setAttribute("data-theme",oscuro?"dark":"light");tema.innerHTML=oscuro?"&#9728;":"&#9790;";}
+  aplicar();
+  tema.addEventListener("click",function(){
+    oscuro=!oscuro; aplicar();
+    try{localStorage.setItem("tema",oscuro?"dark":"light");}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
